@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<backup>
+	<name>Testbox Server</name>
+	<jobs>
+	<!-- 
+		<job name="SVN backup" adapter="svn">
+			<svn>
+				<repositories path="/home/vincent/test/" />
+			</svn>
+			<backup-directory path="/tmp/">
+				<archived type="zip" /> Currently the only thing that works is zip
+				<encrypted type="gpg" />
+			</backup-directory>
+			<schedule>
+				<full duration="4">Sun</full>
+				<incremental duration="6">Mon,Tue,Wed,Thu,Fri,Sat
+				</incremental>
+			</schedule>
+		</job>
+		-->
+		<job name="Scribe log backup" adapter="scribe">
+			<backup-directory path="/var/log/scribe/">
+				<archived type="zip" /> <!-- Currently the only thing that works is zip -->
+			</backup-directory>
+		</job>
+	</jobs>
+</backup>
